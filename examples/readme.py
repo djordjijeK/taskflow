@@ -1,9 +1,9 @@
 import logging
 import time
 
-from taskflow.task import Task
-from taskflow.executor import Executor
-from taskflow.scheduler import Scheduler
+from src.taskflow.task import Task
+from src.taskflow.executor import Executor
+from src.taskflow.scheduler import Scheduler
 
 logging.basicConfig(
     level=logging.INFO,
