@@ -1,33 +1,9 @@
-## TaskFlow
-
-TaskFlow is a flexible Python framework for executing tasks with complex dependencies. 
-It provides a robust way to define, schedule, and execute tasks while managing their dependencies, handling failures, and supporting task cancellation. 
-The framework is particularly useful when you need to orchestrate multiple operations that have natural dependencies between them, such as data processing pipelines or build systems.
-
-
-### Features
-
-- Task Dependency Management: define relationships between tasks and let TaskFlow handle the execution order automatically
-
-
-- Parallel Task Execution: run independent tasks concurrently with customizable thread pools
-
-
-- Resource Management: group similar tasks using tags to control how system resources are allocated during execution
-
-### Example
-
-The following example demonstrates how TaskFlow can be used to create a file processing pipeline. 
-In this scenario, each file goes through three stages: reading, processing, and compression. 
-Tasks of similar nature share thread pools through tagging, and the framework automatically handles parallel execution while respecting dependencies.
-
-```.python
 import logging
 import time
 
-from src.taskflow.task import Task
-from src.taskflow.executor import Executor
-from src.taskflow.scheduler import Scheduler
+from taskflow.task import Task
+from taskflow.executor import Executor
+from taskflow.scheduler import Scheduler
 
 logging.basicConfig(
     level=logging.INFO,
@@ -117,7 +93,3 @@ def process_files(filenames):
 if __name__ == "__main__":
     files = ["file1.txt", "file2.txt", "file3.txt", "file4.txt", "file5.txt"]
     results = process_files(files)
-```
-
-When running this example, you'll see log messages showing how tasks are executed in parallel while maintaining the correct dependency order. 
-The framework ensures that each file's processing task only starts after its reading task completes, and compression begins only after processing finishes.
