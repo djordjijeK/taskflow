@@ -119,5 +119,5 @@ if __name__ == "__main__":
     results = process_files(files)
 ```
 
-When running this example, you'll see log messages showing how tasks are executed in parallel while maintaining the correct dependency order. 
-The framework ensures that each file's processing task only starts after its reading task completes, and compression begins only after processing finishes.
+When you run this example, you'll see log messages demonstrating how tasks are executed in parallel while adhering to the correct dependency order. 
+The framework ensures that each file's processing task starts only after its reading task is completed, and compression begins only after the processing is finished.
